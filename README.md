@@ -31,36 +31,58 @@ Learned version control workflows using Git and GitHub like:
 - Pull requests
 - Tags
 - Markdown documentation
-# Step 1: Initialize repo and connect to GitHub
+
+---
+
+## 🔁 Git Branching Strategy
+
+- **main** – Stable production branch  
+- **dev** – Active development branch  
+- **feature** – For new features or changes
+
+---
+
+## 📸 Screenshots
+
+> Please refer to the screenshots folder or markdown for all Git commands and operations done during this task.
+
+---
+
+## 🧾 Commands Used
+
+```bash
+# Step 1: Initialize the repository
 git init
+
+# Step 2: Add GitHub remote
 git remote add origin https://github.com/shireesha-banothu/git-devops-project.git
 
-# Step 2: Add sample files
+# Step 3: Create sample files
 echo "# DevOps Project" > README.md
 echo "console.log('Hello from Node.js');" > index.js
+
+# Step 4: Stage and commit files
 git add .
 git commit -m "Initial commit with README and index.js"
 git branch -M main
 git push -u origin main
 
-# Step 3: Create & switch to dev branch
+# Step 5: Create dev and feature branches
 git checkout -b dev
 git push origin dev
-
-# Step 4: Create & switch to feature branch
 git checkout -b feature
 git push origin feature
 
-# Step 5: Make changes in feature branch
-# (e.g., edit README or index.js)
+# Step 6: Add changes and push from feature
 git add .
 git commit -m "Added sample feature code"
 git push origin feature
 
-# Step 6: Create PR: feature ➡️ dev (on GitHub) and merge
-# Step 7: Create PR: dev ➡️ main (on GitHub) and merge
+# Step 7: Create Pull Requests (on GitHub)
+# - feature ➡️ dev (merge)
+# - dev ➡️ main (merge)
 
-# Step 8: Pull latest changes if needed
+# Step 8: Pull updates if needed
 git checkout main
 git pull origin main
 
@@ -71,7 +93,8 @@ git add .gitignore
 git commit -m "Add .gitignore"
 git push origin main
 
-# Step 10: Add a tag
+# Step 10: Create a version tag
 git tag v1.0 -m "First release"
 git push origin v1.0
+
 
